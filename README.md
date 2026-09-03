@@ -1,4 +1,3 @@
-<img width="1600" height="770" alt="img1" src="https://github.com/user-attachments/assets/f0b0c3a7-3969-45c1-9d86-735f53c69b37" />
 <img width="1280" height="640" alt="git (1)" src="https://github.com/user-attachments/assets/8920b256-2ba8-4988-b824-5351134eb4bd" />
 
 
@@ -108,7 +107,7 @@ For Software:
 
 # Screenshots
 Website Interface
-<img width="1600" height="770" alt="img1" src="https://github.com/user-attachments/assets/7b945247-499b-4ba1-ab78-6d7fe2972457" />
+<img width="1600" height="770" alt="img1" src="https://github.com/user-attachments/assets/f0b0c3a7-3969-45c1-9d86-735f53c69b37" />
 The landing page of the Biscuit Dunk AI website, providing access to the biscuit dunk analysis system and introducing the project’s AI-powered computer vision functionality.
 
 Real-Time Biscuit Dunk Detection
