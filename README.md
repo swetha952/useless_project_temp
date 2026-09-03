@@ -28,51 +28,79 @@ People have been dunking biscuits irresponsibly for years without knowing the ex
 Our project solves this completely unnecessary but extremely important problem.
 
 ### The Solution (that nobody asked for)
-We use YOLO + computer vision + mathematical analysis to monitor the biscuit during a dunk.
+We use OpenCV-based computer vision and mathematical analysis to monitor the biscuit during a dunk.
 
 The system:
 
-Detects the biscuit and cup automatically
-Tracks the biscuit in real time
-Measures immersion depth
+Detects and tracks the biscuit using OpenCV
+Identifies the beverage surface
+Measures biscuit immersion depth
 Measures dunk duration
 Estimates biscuit orientation/angle
-Tracks movement
+Tracks biscuit movement
 Calculates biscuit stability
 Predicts breakage probability
 Generates a dunk score out of 100
 Assigns a hilarious dunk rating
-Displays a real-time stability graph
-Shows the final results after the dunk
+Generates a stability graph
+Displays the final dunk analysis
+Overall Pipeline
 
-The overall pipeline is:
-
-Webcam → YOLO Detection → Tracking → Immersion + Angle + Movement → Stability → Break Risk → Dunk Score → Final Analysis
+Webcam → OpenCV Detection/Tracking → Immersion + Angle + Movement → Stability → Break Risk → Dunk Score → Final Analysis
 
 ## Technical Details
 ### Technologies/Components Used
 For Software:
-Python
-HTML / CSS / JavaScript — web interface
-YOLO — biscuit and cup/object detection
-OpenCV — video processing and computer vision
-NumPy — numerical calculations
-Scikit-learn — machine-learning-based prediction
-Matplotlib / OpenCV drawing — stability visualization
-VS Code / GitHub Copilot — development tools
+Python — Main programming language
+HTML — Web interface structure
+CSS — UI styling
+JavaScript — Web interface interactions and result display
+OpenCV — Camera access, object tracking, image processing and computer vision
+NumPy — Numerical and array operations
+Math — Mathematical calculations for angle, movement and breakage probability
+VS Code — Development environment
+GitHub Copilot — Development assistance
+
+Computer Vision Techniques Used
+OpenCV contour detection
+Thresholding and image preprocessing
+Morphological operations
+minAreaRect() for biscuit orientation
+CSRT Tracker for real-time biscuit tracking
+ROI-based image analysis
+Webcam frame processing
 
 For Hardware:
-- [List main components]
-- [List specifications]
-- [List tools required]
+-Laptop/PC
+-Built-in or USB webcam
+-Biscuit
+-Cup
+-Tea/coffee/beverage
 
 ### Implementation
 For Software:
 # Installation
-[commands]
+Install Python dependencies:
+
+pip install opencv-python numpy
+
+If your OpenCV version does not provide the CSRT tracker through the normal cv2 package, install the contrib package:
+
+pip uninstall opencv-python
+pip install opencv-contrib-python
+
+Important: Don't install both opencv-python and opencv-contrib-python at the same time, because that can cause OpenCV module conflicts.
 
 # Run
-[commands]
+From the project directory:
+
+python main.py
+
+or on Windows:
+
+py main.py
+
+The application opens the web interface, where the user can select OPEN CAMERA and begin the biscuit dunk analysis.
 
 ### Project Documentation
 For Software:
