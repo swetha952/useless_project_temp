@@ -106,7 +106,7 @@ The application opens the web interface, where the user can select OPEN CAMERA a
 For Software:
 
 # Screenshots (Add at least 3)
-![Images/img1.jpeg](Add screenshot 1 here with proper name)
+<img width="1920" height="1080" alt="Screenshot (176)" src="https://github.com/user-attachments/assets/c92a484c-1760-490b-a9e9-8b8699cfbaf4" />
 *Add caption explaining what this shows*
 
 ![Screenshot2](Add screenshot 2 here with proper name)
