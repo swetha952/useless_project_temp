@@ -106,15 +106,18 @@ The application opens the web interface, where the user can select OPEN CAMERA a
 ### Project Documentation
 For Software:
 
-# Screenshots (Add at least 3)
+# Screenshots
+Website Interface
 <img width="1600" height="770" alt="img1" src="https://github.com/user-attachments/assets/7b945247-499b-4ba1-ab78-6d7fe2972457" />
-*Add caption explaining what this shows*
+The landing page of the Biscuit Dunk AI website, providing access to the biscuit dunk analysis system and introducing the project’s AI-powered computer vision functionality.
 
+Real-Time Biscuit Dunk Detection
 <img width="1600" height="756" alt="img2" src="https://github.com/user-attachments/assets/6e816dc3-9586-4f41-b61e-6a6e48511322" />
-*Add caption explaining what this shows*
+The system uses the webcam and OpenCV to detect and track the biscuit during the dunking process, while monitoring its position and interaction with the beverage.
 
+Biscuit Dunk Analysis Results
 <img width="1600" height="759" alt="img3" src="https://github.com/user-attachments/assets/ed27af82-b7e2-4590-9423-ddfb2d9f2d85" />
-*Add caption explaining what this shows*
+he final analysis screen presents the measured dunk parameters, including immersion, dunk time, angle, stability, breakage risk, and overall dunk score, along with a stability graph showing the dunk performance over time.
 
 # Diagrams
 ![Workflow](Add your workflow/architecture diagram here)
@@ -148,9 +151,9 @@ For Hardware:
 [Add any extra demo materials/links]
 
 ## Team Contributions
-- [Name 1]: [Specific contributions]
-- [Name 2]: [Specific contributions]
-- [Name 3]: [Specific contributions]
+- Swetha C R: Developed the OpenCV-based computer vision system, including real-time biscuit detection and tracking, beverage-surface calibration, immersion        measurement, dunk-time calculation, biscuit angle detection, and movement tracking. Also integrated the analysis modules into the main Python application.
+- Arathi S: Developed the website UI and result interface, including the landing page, camera interaction, final results display, stability graph, dunk score, stability calculation, and breakage-risk analysis. Also handled the integration between the frontend interface and the Python/OpenCV backend.
+
 
 ---
 Made with ❤️ at TinkerHub Useless Projects 
