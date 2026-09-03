@@ -2,34 +2,64 @@
 
 
 
-# [Project Name] 🎯
+# Hello Chayae,Kadi Evide???🎯
 
 
 ## Basic Details
-### Team Name: [Name]
+### Team Name: Useless.exe
 
 
 ### Team Members
-- Team Lead: [Name] - [College]
-- Member 2: [Name] - [College]
-- Member 3: [Name] - [College]
+- Member 1: Swetha C R - Muthoot Institute of Technology and Science
+- Member 2: Arathi S- Muthoot Institute of Technology and Science
 
 ### Project Description
-[2-3 lines about what your project does]
+Hello Chayae, Kadi Undo??? is a computer-vision-based biscuit dunking analyzer that uses a webcam to detect and track a biscuit and cup, monitor its immersion, angle, movement and dunk duration. It then calculates a Biscuit Stability Index, Breakage Risk, Dunking Score and real-time Stability Graph to determine whether your dunk was a masterpiece or a biscuit disaster.
 
 ### The Problem (that doesn't exist)
-[What ridiculous problem are you solving?]
+The Problem (that doesn't exist)
+
+Nobody has ever asked:
+
+"How scientifically dangerous is my biscuit dunk?"
+
+People have been dunking biscuits irresponsibly for years without knowing the exact moment their biscuit is about to surrender to the tea.
+
+Our project solves this completely unnecessary but extremely important problem.
 
 ### The Solution (that nobody asked for)
-[How are you solving it? Keep it fun!]
+We use YOLO + computer vision + mathematical analysis to monitor the biscuit during a dunk.
+
+The system:
+
+Detects the biscuit and cup automatically
+Tracks the biscuit in real time
+Measures immersion depth
+Measures dunk duration
+Estimates biscuit orientation/angle
+Tracks movement
+Calculates biscuit stability
+Predicts breakage probability
+Generates a dunk score out of 100
+Assigns a hilarious dunk rating
+Displays a real-time stability graph
+Shows the final results after the dunk
+
+The overall pipeline is:
+
+Webcam → YOLO Detection → Tracking → Immersion + Angle + Movement → Stability → Break Risk → Dunk Score → Final Analysis
 
 ## Technical Details
 ### Technologies/Components Used
 For Software:
-- [Languages used]
-- [Frameworks used]
-- [Libraries used]
-- [Tools used]
+Python
+HTML / CSS / JavaScript — web interface
+YOLO — biscuit and cup/object detection
+OpenCV — video processing and computer vision
+NumPy — numerical calculations
+Scikit-learn — machine-learning-based prediction
+Matplotlib / OpenCV drawing — stability visualization
+VS Code / GitHub Copilot — development tools
 
 For Hardware:
 - [List main components]
