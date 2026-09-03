@@ -17,10 +17,8 @@
 Hello Chayae, Kadi Undo??? is a computer-vision-based biscuit dunking analyzer that uses a webcam to detect and track a biscuit and cup, monitor its immersion, angle, movement and dunk duration. It then calculates a Biscuit Stability Index, Breakage Risk, Dunking Score and real-time Stability Graph to determine whether your dunk was a masterpiece or a biscuit disaster.
 
 ### The Problem (that doesn't exist)
-The Problem (that doesn't exist)
 
 Nobody has ever asked:
-
 "How scientifically dangerous is my biscuit dunk?"
 
 People have been dunking biscuits irresponsibly for years without knowing the exact moment their biscuit is about to surrender to the tea.
