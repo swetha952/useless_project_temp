@@ -1,3 +1,4 @@
+<img width="1600" height="770" alt="img1" src="https://github.com/user-attachments/assets/f0b0c3a7-3969-45c1-9d86-735f53c69b37" />
 <img width="1280" height="640" alt="git (1)" src="https://github.com/user-attachments/assets/8920b256-2ba8-4988-b824-5351134eb4bd" />
 
 
@@ -106,13 +107,13 @@ The application opens the web interface, where the user can select OPEN CAMERA a
 For Software:
 
 # Screenshots (Add at least 3)
-Images/img1.jpeg
+<img width="1600" height="770" alt="img1" src="https://github.com/user-attachments/assets/7b945247-499b-4ba1-ab78-6d7fe2972457" />
 *Add caption explaining what this shows*
 
-![Screenshot2](Add screenshot 2 here with proper name)
+<img width="1600" height="756" alt="img2" src="https://github.com/user-attachments/assets/6e816dc3-9586-4f41-b61e-6a6e48511322" />
 *Add caption explaining what this shows*
 
-![Screenshot3](Add screenshot 3 here with proper name)
+<img width="1600" height="759" alt="img3" src="https://github.com/user-attachments/assets/ed27af82-b7e2-4590-9423-ddfb2d9f2d85" />
 *Add caption explaining what this shows*
 
 # Diagrams
