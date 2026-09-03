@@ -119,27 +119,7 @@ Biscuit Dunk Analysis Results
 he final analysis screen presents the measured dunk parameters, including immersion, dunk time, angle, stability, breakage risk, and overall dunk score, along with a stability graph showing the dunk performance over time.
 
 # Diagrams
-![Workflow](Add your workflow/architecture diagram here)
-*Add caption explaining your workflow*
-
-For Hardware:
-
-# Schematic & Circuit
 <img width="1536" height="1024" alt="ChatGPT Image Sep 4, 2026, 03_36_26 AM" src="https://github.com/user-attachments/assets/6b783408-82b6-4bae-ac5b-a450a7f83013" />
-
-
-![Schematic](Add your schematic diagram here)
-*Add caption explaining the schematic*
-
-# Build Photos
-![Components](Add photo of your components here)
-*List out all components shown*
-
-![Build](Add photos of build process here)
-*Explain the build steps*
-
-![Final](Add photo of final product here)
-*Explain the final build*
 
 ### Project Demo
 # Video
