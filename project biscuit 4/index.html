@@ -1,0 +1,262 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Biscuit Dunk AI</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Kalam:wght@400;700&display=swap');
+
+    :root {
+      --paper: #fffaf0;
+      --ink: #29251f;
+      --muted: #6b5d4d;
+      --orange: #e7a64a;
+      --green: #c9d8bd;
+      --cream: #f5eddf;
+    }
+
+    * { box-sizing: border-box; }
+
+    body {
+      min-height: 100vh;
+      margin: 0;
+      display: grid;
+      place-items: center;
+      overflow: hidden;
+      color: var(--ink);
+      background-color: var(--cream);
+      background-image: radial-gradient(#d7cbb8 0.7px, transparent 0.7px);
+      background-size: 15px 15px;
+      font-family: 'Kalam', 'Comic Sans MS', cursive;
+    }
+
+    .paper {
+      position: relative;
+      width: min(760px, calc(100% - 40px));
+      min-height: 570px;
+      padding: 58px 30px 38px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: space-between;
+      text-align: center;
+      background: var(--paper);
+      border: 2px solid var(--ink);
+      border-radius: 3% 5% 4% 2%;
+      box-shadow: 9px 10px 0 var(--ink);
+      transform: rotate(-0.7deg);
+    }
+
+    .paper::before, .paper::after {
+      content: '';
+      position: absolute;
+      width: 74px;
+      height: 12px;
+      background: var(--orange);
+      opacity: .8;
+      transform: rotate(-7deg);
+    }
+
+    .paper::before { top: 21px; left: 28px; }
+    .paper::after { right: 25px; bottom: 29px; transform: rotate(8deg); }
+
+    .eyebrow { margin: 0; color: #df7448; font-size: 1.35rem; font-weight: 700; }
+    h1 { max-width: 680px; margin: 30px 0 12px; font-size: clamp(2.4rem, 7vw, 4.9rem); line-height: .98; }
+    .subtitle { margin: 0; color: var(--muted); font-size: clamp(1.05rem, 2.5vw, 1.35rem); }
+
+    .actions { display: flex; flex-direction: column; align-items: center; gap: 17px; margin: 35px 0; }
+    button {
+      border: 2px solid var(--ink);
+      border-radius: 47% 53% 45% 55%;
+      color: var(--ink);
+      font: 700 1rem 'Kalam', 'Comic Sans MS', cursive;
+      cursor: pointer;
+      box-shadow: 4px 5px 0 var(--ink);
+      transition: transform .15s ease, box-shadow .15s ease;
+    }
+    button:hover { transform: translate(-2px, -2px) rotate(-1deg); box-shadow: 6px 7px 0 var(--ink); }
+    button:active { transform: translate(3px, 4px); box-shadow: 1px 1px 0 var(--ink); }
+    .primary { padding: 17px 43px; background: var(--orange); font-size: 1.35rem; }
+    .secondary { padding: 10px 23px; background: var(--green); }
+    footer { color: #8b7a68; font-size: .95rem; }
+    .results {
+      width: min(1100px, calc(100% - 48px));
+      height: min(640px, calc(100vh - 48px));
+      min-height: 0;
+      padding: 42px 52px 30px;
+      display: grid;
+      grid-template-columns: minmax(260px, .8fr) minmax(440px, 1.35fr);
+      grid-template-rows: auto minmax(0, 1fr) auto auto;
+      grid-template-areas:
+        "header header"
+        "metrics graph"
+        "rating rating"
+        "footer footer";
+      column-gap: 48px;
+      row-gap: 12px;
+      align-content: stretch;
+      justify-content: initial;
+      overflow: hidden;
+    }
+    .results > section:first-child { grid-area: header; }
+    .results h1 { margin: 12px 0 8px; }
+    .results .result-grid {
+      grid-area: metrics;
+      align-self: center;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 12px;
+      margin: 0;
+      text-align: left;
+    }
+    .result-item { padding: 12px 16px; border-bottom: 2px dashed #c8b9a5; font-size: 1.15rem; }
+    .result-item strong { display: block; color: #df7448; font-size: .9rem; text-transform: uppercase; }
+    .graph-wrap { grid-area: graph; width: 100%; align-self: center; margin: 0; }
+    .graph-wrap h2 { margin: 0 0 8px; color: #df7448; font-size: 1.1rem; text-align: left; }
+    #stability-graph { width: 100%; height: 240px; display: block; border: 2px solid #29251f; background: #fffdf8; }
+    .results > .subtitle { grid-area: rating; margin: 0; }
+    .results > footer { grid-area: footer; }
+    @media (max-width: 820px) {
+      .results {
+        width: min(760px, calc(100% - 40px));
+        height: auto;
+        min-height: 570px;
+        padding: 45px 30px 30px;
+        display: flex;
+        overflow: visible;
+      }
+      .results .result-grid { margin: 28px 0; }
+      .graph-wrap { margin: 8px 0 22px; }
+    }
+    @media (max-width: 560px) { .result-grid { grid-template-columns: 1fr; } }
+
+    dialog { max-width: min(480px, calc(100% - 30px)); padding: 30px; color: var(--ink); background: var(--paper); border: 2px solid var(--ink); box-shadow: 7px 8px 0 var(--ink); font-family: inherit; }
+    dialog::backdrop { background: rgb(41 37 31 / .35); }
+    dialog h2 { margin-top: 0; font-size: 1.8rem; }
+    dialog p { font-size: 1.1rem; line-height: 1.6; white-space: pre-line; }
+    @media (max-width: 560px) { .paper { min-height: 520px; padding: 45px 20px 30px; } h1 { margin-top: 22px; } }
+  </style>
+</head>
+<body>
+  <main class="paper">
+    <section>
+      <p class="eyebrow">Biscuit Dunk AI</p>
+      <h1>Hello Chayae, kadi undo???</h1>
+      <p class="subtitle">AI-Powered Biscuit Dunk Analysis</p>
+    </section>
+
+    <section class="actions" aria-label="Application actions">
+      <button class="primary" id="open-camera">OPEN CAMERA</button>
+      <button class="secondary" id="how-it-works">HOW IT WORKS</button>
+    </section>
+
+    <footer>Biscuit Dunk AI</footer>
+  </main>
+
+  <dialog id="instructions">
+    <h2>HOW IT WORKS</h2>
+    <p>1. Select your biscuit
+2. Calibrate the beverage surface
+3. Dunk the biscuit
+4. AI analyzes immersion, angle and movement
+5. Get stability, breakage risk and dunk score</p>
+    <button class="secondary" id="close-dialog">CLOSE</button>
+  </dialog>
+
+  <script>
+    const instructions = document.querySelector('#instructions');
+    let resultPoll;
+
+    function showResults(result) {
+      document.body.innerHTML = `
+        <main class="paper results">
+          <section>
+            <p class="eyebrow">Biscuit Dunk AI</p>
+            <h1>DUNK COMPLETE</h1>
+            <p class="subtitle">Your dunk has been analyzed.</p>
+          </section>
+          <section class="result-grid">
+            <div class="result-item"><strong>Immersion</strong>${result.immersion.toFixed(1)}%</div>
+            <div class="result-item"><strong>Dunk Time</strong>${result.dunk_time.toFixed(2)} s</div>
+            <div class="result-item"><strong>Angle</strong>${result.angle.toFixed(1)} deg</div>
+            <div class="result-item"><strong>Stability</strong>${result.stability.toFixed(1)}</div>
+            <div class="result-item"><strong>Break Risk</strong>${result.breakage.toFixed(1)}%</div>
+            <div class="result-item"><strong>Dunk Score</strong>${result.score.toFixed(1)}/100</div>
+          </section>
+          <section class="graph-wrap">
+            <h2>STABILITY DURING DUNK</h2>
+            <canvas id="stability-graph" width="560" height="220"></canvas>
+          </section>
+          <p class="subtitle">Rating: ${result.rating}</p>
+          <footer>Biscuit Dunk AI</footer>
+        </main>`;
+
+      const canvas = document.querySelector('#stability-graph');
+      const context = canvas.getContext('2d');
+      const padding = { left: 42, right: 14, top: 18, bottom: 30 };
+      const graphWidth = canvas.width - padding.left - padding.right;
+      const graphHeight = canvas.height - padding.top - padding.bottom;
+      const times = result.stability_times || [];
+      const values = result.stability_values || [];
+      const maxTime = Math.max(...times, 1);
+
+      context.strokeStyle = '#c8b9a5';
+      context.lineWidth = 1;
+      [0, 50, 100].forEach((value) => {
+        const y = padding.top + graphHeight - (value / 100) * graphHeight;
+        context.beginPath();
+        context.moveTo(padding.left, y);
+        context.lineTo(canvas.width - padding.right, y);
+        context.stroke();
+        context.fillStyle = '#6b5d4d';
+        context.font = '12px Kalam, cursive';
+        context.fillText(value, 10, y + 4);
+      });
+
+      if (values.length > 1) {
+        context.strokeStyle = '#df7448';
+        context.lineWidth = 3;
+        context.beginPath();
+        values.forEach((value, index) => {
+          const x = padding.left + ((times[index] || 0) / maxTime) * graphWidth;
+          const y = padding.top + graphHeight - (Math.max(0, Math.min(100, value)) / 100) * graphHeight;
+          if (index === 0) context.moveTo(x, y);
+          else context.lineTo(x, y);
+        });
+        context.stroke();
+      }
+    }
+
+    function waitForResults() {
+      resultPoll = setInterval(async () => {
+        try {
+          const response = await fetch('/result', { cache: 'no-store' });
+          if (response.status === 200) {
+            clearInterval(resultPoll);
+            showResults(await response.json());
+          }
+        } catch (error) {
+          // The local server remains available while the camera process runs.
+        }
+      }, 1000);
+    }
+
+    document.querySelector('#how-it-works').addEventListener('click', () => instructions.showModal());
+    document.querySelector('#close-dialog').addEventListener('click', () => instructions.close());
+    document.querySelector('#open-camera').addEventListener('click', async (event) => {
+      const button = event.currentTarget;
+      button.disabled = true;
+      button.textContent = 'STARTING CAMERA...';
+      try {
+        await fetch('/open-camera');
+        document.body.innerHTML = '<p style="font: 1.5rem Kalam, cursive">Camera is opening...</p>';
+        waitForResults();
+      } catch (error) {
+        button.disabled = false;
+        button.textContent = 'OPEN CAMERA';
+        alert('Could not start the camera. Please run python main.py again.');
+      }
+    });
+  </script>
+</body>
+</html>
