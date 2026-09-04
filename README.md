@@ -108,10 +108,10 @@ Website Interface
 <img width="1600" height="770" alt="img1" src="https://github.com/user-attachments/assets/f0b0c3a7-3969-45c1-9d86-735f53c69b37" />
 The landing page of the Biscuit Dunk AI website, providing access to the biscuit dunk analysis system and introducing the project’s AI-powered computer vision functionality.
 
-Biscuit Dunk Analysis Results
+Real-Time Biscuit Dunk Detection
 <img width="1600" height="759" alt="img3" src="https://github.com/user-attachments/assets/ed27af82-b7e2-4590-9423-ddfb2d9f2d85" />
 
-Real-Time Biscuit Dunk Detection
+Biscuit Dunk Analysis Results
 <img width="1600" height="756" alt="img2" src="https://github.com/user-attachments/assets/6e816dc3-9586-4f41-b61e-6a6e48511322" />
 The system uses the webcam and OpenCV to detect and track the biscuit during the dunking process, while monitoring its position and interaction with the beverage.
 
